@@ -1,0 +1,99 @@
+div.login {
+	height: 100%;
+	width: 100%;
+	background: url(../img/bg.png) no-repeat;
+	background-size: cover;
+}
+
+.login .container {
+	display: -webkit-flex; 
+  display: -moz-flex; 
+  display: -o-flex; 
+  display: -ms-flex; 
+  display: flex;
+
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -o-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+
+  justify-content: center;
+  -ms-flex-pack: center;
+
+	height: 100%;
+	width: 100%;
+	padding: 30px;
+	background: url(../img/logo-bg.png) no-repeat 2% 98%;
+	background-size: 260px;
+}
+
+.login .container section {
+	display: -webkit-flex; 
+  display: -moz-flex; 
+  display: -o-flex; 
+  display: -ms-flex; 
+  display: flex;
+
+	-webkit-flex-direction: column;
+  -moz-flex-direction: column; 
+  -o-flex-direction: column; 
+  -ms-flex-direction: column; 
+  flex-direction:  column;
+
+	background: rgba(255,255,255,.2);
+	padding: 40px;
+}
+
+.login .container section .logo {
+	margin-bottom: 25px;
+	width: 100%;
+}
+
+.login .container section .logo img {
+	width: 100%;
+}
+
+.login .container section input {
+	width: 100%;
+	height: 35px;
+	padding: 0 15px;
+	margin: 0 0 15px 0;
+	border: none;
+	border-radius: 0;
+	background: rgba(0,0,0,.1);
+	color: #fff;
+	font-size: 13px;
+}
+
+.login .container section input::-webkit-input-placeholder { 
+  color: #fff;
+}
+
+.login .container section input::-moz-placeholder { 
+  color: #fff;
+}
+
+.login .container section input:-ms-input-placeholder {
+  color: #fff;
+}
+
+.login .container section input:-moz-placeholder {
+  color: #fff;
+}
+
+.login .container section button {
+	padding: 12px;
+	margin-bottom: 10px;
+	border: none;
+	border-radius: 0;
+	background: #015955;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 13px;
+}
+
+.login .container section button:disabled {
+	background: #507170;
+	color: #a7a7a7
+}

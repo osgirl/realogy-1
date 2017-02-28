@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="css/loaders.min.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/login.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+
+<title>Realogy</title>
+</head>
+
+<body>
+
+	<!-- login page -->
+	<div class="login">
+		<div class="container">
+			<section>
+				<div class="logo">
+					<img src="img/logo-white.png">
+				</div>
+				<input type="text" name="user" placeholder="Username">
+				<input type="password" name="pass" placeholder="Password">
+				<!-- on loading add property disabled -->
+				<button>Sign In</button>
+				<!-- on loading remove class invisible -->
+				<div class="line-scale-pulse-out-rapid text-center invisible">
+					<div></div><div></div><div></div><div></div><div></div>
+				</div>
+			</section>
+		</div>
+	</div>
+	<!-- login page end -->
+
+	<!-- main page -->
+	<div class="main hidden">
+		<header>
+			<div class="logo">
+				<img src="img/logo.png">
+			</div>
+			<div class="user">
+				<div id="user-btn" class="clickable">
+					<img src="img/user-white.png">
+				</div>
+			</div>
+			<div class="user-info hidden">
+				<div class="current">
+					<img src="img/user-green.png">
+					<p>Admin</p>
+				</div>
+				<button>Sign Out</button>
+			</div>
+		</header>
+
+		<div class="title">
+			<div class="menu-btn">
+				<span></span>
+			</div>
+			<!-- title needs to change depending on tab selected -->
+			<h1>Create Brand</h1>
+		</div>
+
+		<div id="tabs" class="container">
+
+			<ul class="nav">
+				<li class="active"><a href="#tabs-1">Create Brand</a></li>
+				<li><a href="#tabs-2">Create Product ID</a></li>
+			</ul>
+
+			<section>
+				<!-- tab 1 -->
+				<div id="tabs-1" class="content">
+					<div class="wrapper">
+						<input type="text" name="brand-name" placeholder="Enter Brand Name">
+						<button>Add</button>
+
+						<h1>Manage Brands</h1>
+						<div class="column">
+							<p>Realogy</p>
+							<p>Coldwell</p>
+							<p>Sothebys</p>
+							<p>Regions</p>
+						</div>
+						<div class="column edit">
+							<p><span>Edit</span> / <span>Delete</span></p>
+							<p><span>Edit</span> / <span>Delete</span></p>
+							<p><span>Edit</span> / <span>Delete</span></p>
+							<p><span>Edit</span> / <span>Delete</span></p>
+						</div>
+					</div>
+				</div>
+
+				<!-- tab 2 -->
+				<div id="tabs-2" class="content">
+					<div class="wrapper">
+						<input type="text" name="product-id" placeholder="Enter Product ID">
+						<select>
+							<option selected disabled>Please Select a Category</option>
+							<option value="">Broker/Owner/Manager</option>
+	  					<option value="">Sales Associate</option>
+						</select>
+						<select>
+							<option selected disabled>Please Select a Brand</option>
+							<option value="">Realogy</option>
+	  					<option value="">Coldwell</option>
+	  					<option value="">Sothebys</option>
+	  					<option value="">Regions</option>
+						</select>
+						<button>Add</button>
+
+						<h1>Manage Product IDs</h1>
+						<div class="column">
+							<p>1245677895</p>
+							<p>1245677895</p>
+							<p>1245677895</p>
+							<p>1245677895</p>
+						</div>
+						<div class="column edit">
+							<p><span>Edit</span> / <span>Delete</span></p>
+							<p><span>Edit</span> / <span>Delete</span></p>
+							<p><span>Edit</span> / <span>Delete</span></p>
+							<p><span>Edit</span> / <span>Delete</span></p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+	</div>
+	<!-- main page end -->
+
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/scroll.js"></script>
+
+</body>
+</html>
