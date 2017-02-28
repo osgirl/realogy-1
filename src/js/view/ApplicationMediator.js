@@ -1,4 +1,5 @@
 (function(){
+
     function ApplicationMediator() {
         puremvc.Mediator.call(this, this.constructor.NAME, new view.components.Application());
     }
@@ -27,12 +28,12 @@
     };
 
     ApplicationMediator.prototype.handleNotification = function(notification) {
-        switch(notification.name) {
+        switch(notification.getName()) {
             case ApplicationFacade.SERVICE_RESULT:
-                this.viewComponent.service_result(notification.body);
+                this.viewComponent.service_result(notification.getBody());
                 break;
             case ApplicationFacade.SERVICE_FAULT:
-                this.viewComponent.service_fault(notification.body);
+                this.viewComponent.service_fault(notification.getBody());
                 break;
         }
     };
@@ -40,4 +41,5 @@
     ApplicationMediator.NAME = 'ApplicationMediator';
 
     view.ApplicationMediator = ApplicationMediator;
+
 }());

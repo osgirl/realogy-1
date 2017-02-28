@@ -1,8 +1,8 @@
 (function(){
 
-    function ResultData() {
-        this.data = null;
-        this.error = null;
+    function ResultData(data, error) {
+        this.data = data;
+        this.error = error;
     }
 
     ResultData.prototype.setData = function(data) {

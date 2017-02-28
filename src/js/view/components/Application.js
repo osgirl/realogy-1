@@ -5,6 +5,7 @@
             this.service = self.service.bind(self);
         }
         this.login = new view.components.Login();
+        this.login.setDelegate(new IDelegate());
     }
 
     Application.prototype.creationComplete = function() {

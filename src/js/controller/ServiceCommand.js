@@ -1,4 +1,5 @@
 (function(){
+
     function ServiceCommand(){
         puremvc.SimpleCommand.call(this);
     }
@@ -12,7 +13,8 @@
         var serviceProxy = this.facade.retrieveProxy(model.ServiceProxy.NAME);
 
         switch(requestVO.getRequestData().getType()) {
-            case AppConstants.DEVICE_READY:
+            case AppConstants.LOGIN:
+                serviceProxy.login(serviceRequest);
                 break;
             case AppConstants.AGENDA:
                 break;
@@ -21,7 +23,7 @@
 
     ServiceCommand.prototype.result = function(notification) {
         var serviceRequest = notification.getBody();
-        switch (notification.name) {
+        switch (notification.getName()) {
             case model.request.ServiceRequest.RESULT:
                 this.sendNotification(ApplicationFacade.SERVICE_RESULT, serviceRequest.getRequestVO());
                 break;
@@ -32,4 +34,5 @@
     };
 
     controller.ServiceCommand = ServiceCommand;
+
 }());
