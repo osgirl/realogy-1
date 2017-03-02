@@ -31,17 +31,25 @@
                 this.login.signInWithCredentials_success(requestVO);
                 break;
             case AppConstants.GET_BRANDS:
-                this.brand.brandGet_success(requestVO);
+                this.brand.get_success(requestVO);
+                break;
+            case AppConstants.POST_BRANDS:
+                this.brand.post_success(requestVO);
+                break;
+            case AppConstants.DELETE_BRANDS:
+                this.brand.delete_success(requestVO);
                 break;
         }
     };
 
     Application.prototype.service_fault = function(requestVO) {
         console.error(requestVO.getRequestType());
-        console.log(requestVO.getResultData());
         switch (requestVO.getRequestType()) {
             case AppConstants.SIGN_IN_WITH_CREDENTIALS:
                 this.login.signInWithCredentials_fail(requestVO);
+                break;
+            default:
+                console.log(requestVO.getResultData());
                 break;
         }
     };

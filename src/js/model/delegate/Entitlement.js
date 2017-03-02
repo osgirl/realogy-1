@@ -27,6 +27,26 @@
         });
     };
 
+    Entitlement.prototype.renewAuthToken = function(requestVO) {
+        return new Promise(function(resolve, reject){
+            var xmlHttpRequest = new XMLHttpRequest();
+            xmlHttpRequest.open("GET", "http://localhost:8080/entitlement/SignInWithCredentials?authToken=" + requestVO.getRequestData(), true);
+            xmlHttpRequest.onreadystatechange = function() {
+                if (xmlHttpRequest.readyState === 4) {
+                    if(xmlHttpRequest.status === 200) {
+                        requestVO.setResultData(xmlHttpRequest.responseXML);
+                        resolve(requestVO);
+                    } else {
+                        requestVO.setResultData(xmlHttpRequest.responseXML);
+                        reject(requestVO);
+                    }
+                }
+            };
+            xmlHttpRequest.addEventListener("error", function(error){requestVO.setResultData(error);reject(requestVO);});
+            xmlHttpRequest.send();
+        });
+    };
+
     model.delegate.Entitlement = Entitlement;
 
 })();

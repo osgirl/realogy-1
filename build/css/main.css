@@ -402,6 +402,10 @@ div.main {
 	font-weight: bold;
 }
 
+.main .container section div.content .column.edit li {
+	cursor: pointer;
+}
+
 /* accordian styling */
 .ui-state-active, 
 .ui-widget-content .ui-state-active, 

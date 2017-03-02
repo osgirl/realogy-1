@@ -38,7 +38,6 @@
                     try {
                         var data = JSON.parse(xmlHttpRequest.response);
                     } catch (error) {
-                        console.log("f1");
                         requestVO.setResultData(error);
                         reject(requestVO);
                         return;
@@ -54,6 +53,24 @@
             };
             xmlHttpRequest.addEventListener("error", function(error){requestVO.setResultData(error);reject(requestVO);});
             xmlHttpRequest.send(JSON.stringify({name: requestVO.getRequestData()}));
+        });
+    };
+
+    Brand.prototype.delete = function(requestVO) {
+        return new Promise(function(resolve, reject) {
+            var xmlHttpRequest = new XMLHttpRequest();
+            xmlHttpRequest.open("DELETE", "http://localhost:8080/brands/" + requestVO.getRequestData(), true);
+            xmlHttpRequest.onreadystatechange = function() {
+                if (xmlHttpRequest.readyState === 4) {
+                    if(xmlHttpRequest.status === 204) {
+                        resolve(requestVO);
+                    } else {
+                        reject(requestVO);
+                    }
+                }
+            };
+            xmlHttpRequest.addEventListener("error", function(error){requestVO.setResultData(error);reject(requestVO);});
+            xmlHttpRequest.send();
         });
     };
 

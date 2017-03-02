@@ -22,6 +22,9 @@
             case AppConstants.POST_BRANDS:
                 serviceProxy.postBrands(serviceRequest);
                 break;
+            case AppConstants.DELETE_BRANDS:
+                serviceProxy.deleteBrands(serviceRequest);
+                break;
         }
     };
 

@@ -24,6 +24,11 @@
             .then(this.result.bind(this, serviceRequest), this.fault.bind(this, serviceRequest));
     };
 
+    ServiceProxy.prototype.deleteBrands = function(serviceRequest) {
+        this.brand.delete(serviceRequest.getRequestVO())
+            .then(this.result.bind(this, serviceRequest), this.fault.bind(this, serviceRequest));
+    };
+
     ServiceProxy.prototype.result = function(serviceRequest) {
         if(serviceRequest.hasCallback()) {
             serviceRequest.notifyObserver(new puremvc.Notification(model.request.ServiceRequest.RESULT, serviceRequest));
