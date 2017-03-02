@@ -91,6 +91,10 @@ div.login {
 	color: #fff;
 	text-transform: uppercase;
 	font-size: 13px;
+	-webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
 }
 
 .login .container section button:disabled {

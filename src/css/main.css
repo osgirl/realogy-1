@@ -493,6 +493,73 @@ html .ui-button.ui-state-disabled:active {
   transform: rotate(-180deg);
 }
 
+.overlay {
+	display: -webkit-flex; 
+  display: -moz-flex; 
+  display: -o-flex; 
+  display: -ms-flex; 
+  display: flex;
+
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -o-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+
+  justify-content: center;
+  -ms-flex-pack: center;
+
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.8);
+}
+
+.overlay .box {
+	width: 60%;
+	max-width: 500px;
+	padding: 40px;
+	background: #fff;
+	border: 3px solid #d6d6d6;
+}
+
+.overlay .box h2 {
+	margin-bottom: 40px;
+	font-weight: normal;
+	text-align: center;
+	font-size: 20px;
+}
+
+.overlay .box button {
+	width: 45%;
+	padding: 12px 0;
+	margin-bottom: 10px;
+	border: none;
+	border-radius: 0;
+	background: #015955;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 13px;
+	-webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.overlay .box button:first-of-type {
+	width: 46%;
+	margin-right: 7%;
+}
+
+.overlay .box button:disabled {
+	background: #507170;
+	color: #a7a7a7;
+}
+
 @media only screen and (max-width : 768px) {
 	.main .container ul.nav {
 		width: 40%;
@@ -502,6 +569,12 @@ html .ui-button.ui-state-disabled:active {
 	}
 	.main .container section div.content .wrapper {
 		width: 100%;
+	}
+}
+
+@media only screen and (max-width : 500px) {
+	.overlay .box {
+		width: 95%;
 	}
 }
 
