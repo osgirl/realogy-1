@@ -42,7 +42,7 @@ div.login {
   flex-direction:  column;
 
 	background: rgba(255,255,255,.2);
-	padding: 40px;
+	padding: 40px 60px;
 }
 
 .login .container section .logo {
@@ -96,4 +96,10 @@ div.login {
 .login .container section button:disabled {
 	background: #507170;
 	color: #a7a7a7
+}
+
+.login .container section p.invalid {
+	color: #cc1313;
+	font-size: 13px;
+	text-align: center;
 }
