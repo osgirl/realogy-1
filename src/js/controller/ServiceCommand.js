@@ -13,7 +13,7 @@
         var serviceProxy = this.facade.retrieveProxy(model.ServiceProxy.NAME);
 
         switch(requestVO.getRequestType()) {
-            case AppConstants.LOGIN:
+            case AppConstants.SIGN_IN_WITH_CREDENTIALS:
                 serviceProxy.login(serviceRequest);
                 break;
             case AppConstants.AGENDA:

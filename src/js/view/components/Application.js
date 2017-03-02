@@ -18,7 +18,7 @@
     Application.prototype.service_result = function(requestVO) {
         console.log(requestVO.getRequestType());
         switch (requestVO.getRequestType()) {
-            case AppConstants.LOGIN:
+            case AppConstants.SIGN_IN_WITH_CREDENTIALS:
                 this.login.login_success(requestVO);
                 break;
             case AppConstants.AGENDA:
@@ -29,7 +29,7 @@
     Application.prototype.service_fault = function(requestVO) {
         console.error(requestVO.getRequestType());
         switch (requestVO.getRequestType()) {
-            case AppConstants.LOGIN:
+            case AppConstants.SIGN_IN_WITH_CREDENTIALS:
                 this.login.login_fail(requestVO);
                 break;
         }
