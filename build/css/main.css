@@ -383,6 +383,13 @@ div.main {
 .main .container section div.content .column {
 	width: 50%;
 	float: left;
+	padding: 0;
+	list-style: none;
+}
+
+.main .container section div.content .column li {
+	font-size: 13px;
+	margin: 0 0 10px 0;
 }
 
 .main .container section div.content #accordion .column {
