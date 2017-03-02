@@ -22,10 +22,7 @@
                     }
                 }
             };
-            xmlHttpRequest.addEventListener("error", function(error){
-                requestVO.setResultData(error);
-                reject(requestVO);
-            });
+            xmlHttpRequest.addEventListener("error", function(error){requestVO.setResultData(error);reject(requestVO);});
             xmlHttpRequest.send(body);
         });
     };

@@ -19,6 +19,9 @@
             case AppConstants.GET_BRANDS:
                 serviceProxy.getBrands(serviceRequest);
                 break;
+            case AppConstants.POST_BRANDS:
+                serviceProxy.postBrands(serviceRequest);
+                break;
         }
     };
 

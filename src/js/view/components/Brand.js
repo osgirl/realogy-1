@@ -3,19 +3,27 @@
     function Brand(delegate) {
         this.delegate = delegate;
         document.getElementById("brandAdd").addEventListener("click", this.brand_save.bind(this));
+        this.list = document.getElementById("brandList");
+        this.deleteList = document.getElementById("brandDeleteList");
     }
 
     Brand.prototype.brand_save = function(event) {
-        console.log(event);
+        var data = document.getElementById("brand").value;
+        if(data.trim() != "") {
+            this.delegate.service(new model.vo.RequestVO(data, AppConstants.POST_BRANDS));
+        }
     };
 
     Brand.prototype.brandGet_success = function(requestVO) {
         var data = requestVO.getResultData();
         for(var i=0; i<data.length; i++) {
-            console.log(data[i]);
+            var ul = document.createElement("ul");
+            ul.innerHTML = data[i].name;
+            this.list.appendChild(ul);
 
-            var p = document.createElement("p");
-            p.innerHTML = data[i].name;
+            ul = document.createElement("ul");
+            ul.innerHTML = "Delete";
+            this.deleteList.appendChild(ul);
         }
     };
 

@@ -19,6 +19,11 @@
             .then(this.result.bind(this, serviceRequest), this.fault.bind(this, serviceRequest));
     };
 
+    ServiceProxy.prototype.postBrands = function(serviceRequest) {
+        this.brand.post(serviceRequest.getRequestVO())
+            .then(this.result.bind(this, serviceRequest), this.fault.bind(this, serviceRequest));
+    };
+
     ServiceProxy.prototype.result = function(serviceRequest) {
         if(serviceRequest.hasCallback()) {
             serviceRequest.notifyObserver(new puremvc.Notification(model.request.ServiceRequest.RESULT, serviceRequest));
