@@ -10,7 +10,7 @@
 
     ServiceProxy.prototype.login = function(serviceRequest) {
         this.entitlement.signInWithCredentials(serviceRequest.getRequestVO())
-            .then(this.result, this.fault);
+            .then(this.result.bind(this, serviceRequest), this.fault.bind(this, serviceRequest));
     };
 
     ServiceProxy.prototype.result = function(serviceRequest) {
@@ -20,8 +20,10 @@
     };
 
     ServiceProxy.prototype.fault = function(serviceRequest) {
-        if(serviceRequest.hasCallback()) {
+        if(serviceRequest .hasCallback && serviceRequest.hasCallback()) {
             serviceRequest.notifyObserver(new puremvc.Notification(model.request.ServiceRequest.FAULT, serviceRequest));
+        } else {
+            console.log(serviceRequest);
         }
     };
 

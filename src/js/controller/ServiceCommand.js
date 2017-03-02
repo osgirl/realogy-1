@@ -12,7 +12,7 @@
         var serviceRequest = new model.request.ServiceRequest(requestVO, this.result, this);
         var serviceProxy = this.facade.retrieveProxy(model.ServiceProxy.NAME);
 
-        switch(requestVO.getRequestData().getType()) {
+        switch(requestVO.getRequestType()) {
             case AppConstants.LOGIN:
                 serviceProxy.login(serviceRequest);
                 break;

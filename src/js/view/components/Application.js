@@ -16,9 +16,10 @@
     };
 
     Application.prototype.service_result = function(requestVO) {
-        console.log(requestVO.type);
-        switch (requestVO.type) {
-            case AppConstants.DEVICE_READY:
+        console.log(requestVO.getRequestType());
+        switch (requestVO.getRequestType()) {
+            case AppConstants.LOGIN:
+                this.login.login_success(requestVO);
                 break;
             case AppConstants.AGENDA:
                 break;
@@ -26,10 +27,10 @@
     };
 
     Application.prototype.service_fault = function(requestVO) {
-        console.error(requestVO.type);
-        switch (requestVO.type) {
-            case AppConstants.AGENDA:
-                console.log('didnt return agenda');
+        console.error(requestVO.getRequestType());
+        switch (requestVO.getRequestType()) {
+            case AppConstants.LOGIN:
+                this.login.login_fail(requestVO);
                 break;
         }
     };

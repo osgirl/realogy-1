@@ -1,11 +1,16 @@
 (function(){
 
-    function RequestVO(requestData) {
+    function RequestVO(requestData, requestType) {
         this.requestData = requestData;
+        this.requestType = requestType;
     }
 
     RequestVO.prototype.getRequestData = function() {
         return this.requestData;
+    };
+
+    RequestVO.prototype.getRequestType = function() {
+        return this.requestType;
     };
 
     RequestVO.prototype.setResultData = function(resultData) {

@@ -4,10 +4,9 @@
 
     Entitlement.prototype.signInWithCredentials = function(requestVO) {
         return new Promise(function(resolve, reject){
-            var requestData = requestVO.getRequestData();
             var body = '<credentials> \
-                            <emailAddress>' + requestData.getData().username + '</emailAddress> \
-                            <password>' + requestData.getData().password + '</password> \
+                            <emailAddress>' + requestVO.getRequestData().username + '</emailAddress> \
+                            <password>' + requestVO.getRequestData().password + '</password> \
                         </credentials>';
 
             var xmlHttpRequest = new XMLHttpRequest();
@@ -15,16 +14,16 @@
             xmlHttpRequest.onreadystatechange = function() {
                 if (xmlHttpRequest.readyState === 4) {
                     if(xmlHttpRequest.status === 200) {
-                        requestVO.setResultData(new model.vo.ResultData(xmlHttpRequest.responseXML, null));
+                        requestVO.setResultData(xmlHttpRequest.responseXML);
                         resolve(requestVO);
                     } else {
-                        requestVO.setResultData(new model.vo.ResultData(null, xmlHttpRequest.responseXML));
+                        requestVO.setResultData(xmlHttpRequest.responseXML);
                         reject(requestVO);
                     }
                 }
             };
             xmlHttpRequest.addEventListener("error", function(error){
-                requestVO.setResultData(new model.vo.ResultData(null, error));
+                requestVO.setResultData(error);
                 reject(requestVO);
             });
             xmlHttpRequest.send(body);

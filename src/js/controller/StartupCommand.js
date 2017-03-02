@@ -1,4 +1,5 @@
 (function(){
+
     function StartupCommand(){
         puremvc.SimpleCommand.call(this);
     }
@@ -13,4 +14,5 @@
     };
 
     controller.StartupCommand = StartupCommand;
+
 }());
