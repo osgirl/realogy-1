@@ -25,7 +25,7 @@
 				<input type="password" name="pass" placeholder="Password" id="password">
 				<!-- on loading add property disabled -->
 				<button id="signIn">Sign In</button>
-				<p class="invalid">Invalid username/password.</p>
+				<p id="invalid" class="invalid hidden">Invalid username/password.</p>
 				<!-- on loading remove class invisible -->
 				<div class="line-scale-pulse-out-rapid text-center invisible" id="loader">
 					<div></div><div></div><div></div><div></div><div></div>
@@ -38,7 +38,7 @@
 
 
 	<!-- main page -->
-	<div id="main" class="main" hidden>
+	<div id="main" class="main hidden">
 		<header>
 			<div class="logo">
 				<img src="img/logo.png">
@@ -76,17 +76,17 @@
 				<!-- tab 1 -->
 				<div id="tabs-1" class="content">
 					<div class="wrapper">
-						<input type="text" name="brand-name" placeholder="Enter Brand Name">
-						<button>Add</button>
+						<input id="brand" type="text" name="brand-name" placeholder="Enter Brand Name">
+						<button id="brandAdd">Add</button>
 
 						<h1>Manage Brands</h1>
-						<div class="column">
+						<div id="brandList" class="column">
 							<p>Realogy</p>
 							<p>Coldwell</p>
 							<p>Sothebys</p>
 							<p>Regions</p>
 						</div>
-						<div class="column edit">
+						<div id="brandDeleteList" class="column edit">
 							<p><span>Delete</span></p>
 							<p><span>Delete</span></p>
 							<p><span>Delete</span></p>

@@ -13,6 +13,7 @@ div.main {
   display: -ms-flex; 
   display: flex;
 
+
   -webkit-flex-direction: row;
   -moz-flex-direction: row; 
   -o-flex-direction: row; 
@@ -384,6 +385,10 @@ div.main {
 	float: left;
 }
 
+.main .container section div.content #accordion .column {
+	width: 33.3333%;
+}
+
 .main .container section div.content .column.edit {
 	text-align: right;
 	color: #015955;
@@ -416,6 +421,10 @@ html .ui-button.ui-state-disabled:active {
 .ui-widget-content {
 	border: none;
 	border-radius: 0;
+}
+
+.ui-accordion .ui-accordion-content {
+	padding: 5px;
 }
 
 .main .container section div.content #accordion h3 {
@@ -452,16 +461,20 @@ html .ui-button.ui-state-disabled:active {
 	right: 20px;
 }
 
+#accordion .ui-icon {
+	position: absolute;
+	right: 15px;
+	top: 10px;
+}
+
 #accordion .ui-icon, 
 #accordion .ui-widget-content .ui-icon {
-	margin-left: 10px;
 	background: url(../img/arrow-green.png) no-repeat center center;
 	background-size: 10px;
 }
 
 #accordion .ui-state-active .ui-icon,
 #accordion .ui-button:active .ui-icon {
-	margin-right: 10px;
 	-webkit-transform: rotate(-180deg);
   -moz-transform: rotate(-180deg);
   -ms-transform: rotate(-180deg);

@@ -1,41 +1,54 @@
 (function(){
 
-    function Login() {
-        this.delegate = null;
+    function Login(delegate) {
+        this.delegate = delegate;
         this.username = document.getElementById("username");
         this.password = document.getElementById("password");
         this.loader = document.getElementById("loader");
         this.signIn = document.getElementById("signIn");
-        document.getElementById("signIn").addEventListener("click", this.login.bind(this));
+        document.getElementById("signIn").addEventListener("click", this.signInWithCredentials.bind(this));
 
         this.username.value = "admin@realogy.com";
         this.password.value = "admin101!";
     }
 
-    Login.prototype.login = function(event) {
+    Login.prototype.signInWithCredentials = function(event) {
         if(this.username.value.trim() != "" && this.password.value.trim() != "") {
-            this.username.setAttribute("disabled", "disabled");
-            this.password.setAttribute("disabled", "disabled");
-            this.signIn.setAttribute("disabled", "disabled");
-            this.loader.classList.remove("invisible");
-            this.delegate.service(new model.vo.RequestVO({username: this.username.value.trim(), password: this.password.value.trim()}, AppConstants.SIGN_IN_WITH_CREDENTIALS));
+            this.enableFields(false);
+            location.hash = "#!/login";
         }
     };
 
-    Login.prototype.login_success = function(requestVO) {
-        var doc = requestVO.getResultData();
-        localStorage.setItem("authToken", doc.getElementsByTagName("authToken")[0].firstChild);
+    Login.prototype.signInWithCredentials_success = function(requestVO) {
+        this.enableFields(true);
+        localStorage.setItem("authToken", requestVO.getResultData().getElementsByTagName("authToken")[0].firstChild);
         document.getElementById("login").classList.add("hidden");
+        document.getElementById("main").classList.remove("hidden");
 
-        // set interval on renewal
+        document.getElementById("invalid").classList.add("hidden");
+        location.hash = "#!/brands";
+        // set interval for renewal
     };
 
-    Login.prototype.login_fail = function(requestVO) {
-
+    Login.prototype.signInWithCredentials_fail = function(requestVO) {
+        this.enableFields(true);
+        document.getElementById("invalid").classList.remove("hidden");
     };
 
-    Login.prototype.setDelegate = function(delegate) {
-        this.delegate = delegate;
+    Login.prototype.enableFields = function(enabled) {
+        enabled ? this.username.removeAttribute("disabled") : this.username.setAttribute("disabled", "disabled");
+        enabled ? this.password.removeAttribute("disabled") : this.password.setAttribute("disabled", "disabled");
+        enabled ? this.signIn.removeAttribute("disabled") : this.signIn.setAttribute("disabled", "disabled");
+        enabled ? this.loader.classList.add("hidden") : this.loader.classList.remove("invisible");
+    };
+
+    Login.prototype.onhashchange = function(event) {
+        if(location.hash.indexOf("/login") == -1) return;
+        switch(location.hash.slice(2)) {
+            case "/login":
+                this.delegate.service(new model.vo.RequestVO({username: this.username.value.trim(), password: this.password.value.trim()}, AppConstants.SIGN_IN_WITH_CREDENTIALS));
+            break;
+        }
     };
 
     view.components.Login = Login;

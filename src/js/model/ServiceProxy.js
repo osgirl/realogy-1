@@ -3,6 +3,7 @@
     function ServiceProxy(data) {
         puremvc.Proxy.call(this, this.constructor.NAME, data);
         this.entitlement = new model.delegate.Entitlement();
+        this.brand = new model.delegate.Brand();
     }
 
     ServiceProxy.prototype = Object.create(puremvc.Proxy.prototype);
@@ -10,6 +11,11 @@
 
     ServiceProxy.prototype.login = function(serviceRequest) {
         this.entitlement.signInWithCredentials(serviceRequest.getRequestVO())
+            .then(this.result.bind(this, serviceRequest), this.fault.bind(this, serviceRequest));
+    };
+
+    ServiceProxy.prototype.getBrands = function(serviceRequest) {
+        this.brand.get(serviceRequest.getRequestVO())
             .then(this.result.bind(this, serviceRequest), this.fault.bind(this, serviceRequest));
     };
 

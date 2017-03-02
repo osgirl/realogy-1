@@ -16,7 +16,8 @@
             case AppConstants.SIGN_IN_WITH_CREDENTIALS:
                 serviceProxy.login(serviceRequest);
                 break;
-            case AppConstants.AGENDA:
+            case AppConstants.GET_BRANDS:
+                serviceProxy.getBrands(serviceRequest);
                 break;
         }
     };
