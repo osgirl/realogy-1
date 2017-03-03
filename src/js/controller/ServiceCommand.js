@@ -14,7 +14,10 @@
 
         switch(requestVO.getRequestType()) {
             case AppConstants.SIGN_IN_WITH_CREDENTIALS:
-                serviceProxy.login(serviceRequest);
+                serviceProxy.signInWithCredentials(serviceRequest);
+                break;
+            case AppConstants.RENEW_AUTH_TOKEN:
+                serviceProxy.renewAuthToken(serviceRequest);
                 break;
             case AppConstants.GET_BRANDS:
                 serviceProxy.getBrands(serviceRequest);

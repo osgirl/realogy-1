@@ -6,3 +6,6 @@ AppConstants.RENEW_AUTH_TOKEN = "GET renewAuthToken";
 AppConstants.GET_BRANDS = "GET /brands";
 AppConstants.POST_BRANDS = "POST /brands";
 AppConstants.DELETE_BRANDS = "DELETE /brands/:id";
+
+AppConstants.CONFIRM = "confirm";
+AppConstants.ALERT = "alert";

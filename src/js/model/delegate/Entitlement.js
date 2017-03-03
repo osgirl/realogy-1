@@ -4,10 +4,10 @@
 
     Entitlement.prototype.signInWithCredentials = function(requestVO) {
         return new Promise(function(resolve, reject){
-            var body = '<credentials> \
-                            <emailAddress>' + requestVO.getRequestData().username + '</emailAddress> \
-                            <password>' + requestVO.getRequestData().password + '</password> \
-                        </credentials>';
+            var body = "<credentials> \
+                            <emailAddress>" + requestVO.getRequestData().username + "</emailAddress> \
+                            <password>" + requestVO.getRequestData().password + "</password> \
+                        </credentials>";
 
             var xmlHttpRequest = new XMLHttpRequest();
             xmlHttpRequest.open("POST", "http://localhost:8080/entitlement/SignInWithCredentials", true);
@@ -30,7 +30,7 @@
     Entitlement.prototype.renewAuthToken = function(requestVO) {
         return new Promise(function(resolve, reject){
             var xmlHttpRequest = new XMLHttpRequest();
-            xmlHttpRequest.open("GET", "http://localhost:8080/entitlement/SignInWithCredentials?authToken=" + requestVO.getRequestData(), true);
+            xmlHttpRequest.open("GET", "http://localhost:8080/entitlement/renewAuthToken?authToken=" + requestVO.getRequestData(), true);
             xmlHttpRequest.onreadystatechange = function() {
                 if (xmlHttpRequest.readyState === 4) {
                     if(xmlHttpRequest.status === 200) {

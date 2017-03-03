@@ -21,6 +21,7 @@
     };
 
     Brand.prototype.get_success = function(requestVO) {
+        this.list.innerHTML = this.deleteList.innerHTML = "";
         var data = requestVO.getResultData();
         for(var i=0; i<data.length; i++) {
             this.addNode(data[i]);

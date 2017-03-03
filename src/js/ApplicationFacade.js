@@ -30,3 +30,5 @@ ApplicationFacade.STARTUP = 'startup';
 ApplicationFacade.SERVICE = 'service';
 ApplicationFacade.SERVICE_RESULT = 'serviceResult';
 ApplicationFacade.SERVICE_FAULT = 'serviceFault';
+ApplicationFacade.POPUP_RESULT = "popupResult";
+ApplicationFacade.POPUP_FAULT = "popupFault";

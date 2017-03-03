@@ -9,8 +9,13 @@
     ServiceProxy.prototype = Object.create(puremvc.Proxy.prototype);
     ServiceProxy.prototype.constructor = ServiceProxy;
 
-    ServiceProxy.prototype.login = function(serviceRequest) {
+    ServiceProxy.prototype.signInWithCredentials = function(serviceRequest) {
         this.entitlement.signInWithCredentials(serviceRequest.getRequestVO())
+            .then(this.result.bind(this, serviceRequest), this.fault.bind(this, serviceRequest));
+    };
+
+    ServiceProxy.prototype.renewAuthToken = function(serviceRequest) {
+        this.entitlement.renewAuthToken(serviceRequest.getRequestVO())
             .then(this.result.bind(this, serviceRequest), this.fault.bind(this, serviceRequest));
     };
 
