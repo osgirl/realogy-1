@@ -1,224 +1,224 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-<link rel="stylesheet" type="text/css" href="css/loaders.min.css">
-<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" type="text/css" href="css/login.css">
-<link rel="stylesheet" type="text/css" href="css/main.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/loaders.min.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 
-<title>Realogy</title>
+	<title>Realogy</title>
 </head>
 
 <body>
 
-	<!-- login page -->
-	<div id="login" class="login hidden">
-		<div class="container">
-			<section>
-				<div class="logo">
-					<img src="img/logo-white.png">
-				</div>
-				<input type="text" name="user" placeholder="Username" id="username">
-				<input type="password" name="pass" placeholder="Password" id="password">
-				<!-- on loading add property disabled -->
-				<button id="signIn">Sign In</button>
-				<p id="invalid" class="invalid hidden">Invalid username/password.</p>
-				<!-- on loading remove class invisible -->
-				<div class="line-scale-pulse-out-rapid text-center invisible" id="loader">
-					<div></div><div></div><div></div><div></div><div></div>
-				</div>
-			</section>
-		</div>
-	</div>
-	<!-- login page end -->
-
-
-
-	<!-- main page -->
-	<div id="main" class="main hidden">
-		<header>
+<!-- login page -->
+<div id="login" class="login hidden">
+	<div class="container">
+		<section>
 			<div class="logo">
-				<img src="img/logo.png">
+				<img src="img/logo-white.png">
 			</div>
-			<div class="user">
-				<div id="user-btn" class="clickable">
-					<img src="img/user-white.png">
-				</div>
+			<input type="text" name="user" placeholder="Username" id="username">
+			<input type="password" name="pass" placeholder="Password" id="password">
+			<!-- on loading add property disabled -->
+			<button id="signIn">Sign In</button>
+			<p id="invalid" class="invalid hidden">Invalid username/password.</p>
+			<!-- on loading remove class invisible -->
+			<div class="line-scale-pulse-out-rapid text-center invisible" id="loader">
+				<div></div><div></div><div></div><div></div><div></div>
 			</div>
-			<div id="profile" class="user-info hidden">
-				<div class="current">
-					<img src="img/user-green.png">
-					<p>Admin</p>
-				</div>
-				<button id="signOut">Sign Out</button>
-			</div>
-		</header>
+		</section>
+	</div>
+</div>
+<!-- login page end -->
 
-		<div class="title">
-			<div class="menu-btn">
-				<span></span>
-			</div>
-			<!-- title needs to change depending on tab selected -->
-			<h1>Create Brand</h1>
+
+
+<!-- main page -->
+<div id="main" class="main hidden">
+	<header>
+		<div class="logo">
+			<img src="img/logo.png">
 		</div>
+		<div class="user">
+			<div id="user-btn" class="clickable">
+				<img src="img/user-white.png">
+			</div>
+		</div>
+		<div id="profile" class="user-info hidden">
+			<div class="current">
+				<img src="img/user-green.png">
+				<p>Admin</p>
+			</div>
+			<button id="signOut">Sign Out</button>
+		</div>
+	</header>
 
-		<div id="tabs" class="container">
+	<div class="title">
+		<div class="menu-btn">
+			<span></span>
+		</div>
+		<!-- title needs to change depending on tab selected -->
+		<h1>Create Brand</h1>
+	</div>
 
-			<ul class="nav">
-				<li class="active"><a href="#tabs-1">Create Brand</a></li>
-				<li><a href="#tabs-2">Create Product ID</a></li>
-			</ul>
+	<div id="tabs" class="container">
 
-			<section>
-				<!-- tab 1 -->
-				<div id="tabs-1" class="content">
-					<div class="wrapper">
-						<input id="brand" type="text" name="brand-name" placeholder="Enter Brand Name">
-						<button id="brandAdd">Add</button>
+		<ul class="nav">
+			<li class="active"><a href="#tabs-1">Create Brand</a></li>
+			<li><a href="#tabs-2">Create Product ID</a></li>
+		</ul>
 
-						<h1>Manage Brands</h1>
-						<ul id="brandList" class="column">
-						</ul>
-						<ul id="brandDeleteList" class="column edit">
-						</ul>
-					</div>
+		<section>
+			<!-- tab 1 -->
+			<div id="tabs-1" class="content">
+				<div class="wrapper">
+					<input id="brand" type="text" name="brand-name" placeholder="Enter Brand Name">
+					<button id="brandAdd">Add</button>
+
+					<h1>Manage Brands</h1>
+					<ul id="brandList" class="column">
+					</ul>
+					<ul id="brandDeleteList" class="column edit">
+					</ul>
 				</div>
+			</div>
 
-				<!-- tab 2 -->
-				<div id="tabs-2" class="content">
-					<div class="wrapper">
-						<input type="text" name="product-id" placeholder="Enter Product ID">
-						<select>
-							<option selected disabled>Please Select a Category</option>
-							<option value="">Broker/Owner/Manager</option>
-	  					<option value="">Sales Associate</option>
-						</select>
-						<select>
-							<option selected disabled>Please Select a Brand</option>
-							<option value="">Realogy</option>
-	  					<option value="">Coldwell</option>
-	  					<option value="">Sothebys</option>
-	  					<option value="">Regions</option>
-						</select>
-						<button>Add</button>
+			<!-- tab 2 -->
+			<div id="tabs-2" class="content">
+				<div class="wrapper">
+					<input type="text" name="product-id" placeholder="Enter Product ID">
+					<select>
+						<option selected disabled>Please Select a Category</option>
+						<option value="">Broker/Owner/Manager</option>
+						<option value="">Sales Associate</option>
+					</select>
+					<select>
+						<option selected disabled>Please Select a Brand</option>
+						<option value="">Realogy</option>
+						<option value="">Coldwell</option>
+						<option value="">Sothebys</option>
+						<option value="">Regions</option>
+					</select>
+					<button>Add</button>
 
-						<h1>Manage Product IDs</h1>
+					<h1>Manage Product IDs</h1>
 
-						<div id="accordion">
-						  <h3>Realogy</h3>
-						  <div>
-						  	<ul class="column">
-									<li>1245677895</li>
-									<li>1245677895</li>
-									<li>1245677895</li>
-									<li>1245677895</li>
-								</ul>
-								<ul class="column">
-									<li>Broker/Owner/Manager</li>
-									<li>Sales Associate</li>
-									<li>Broker/Owner/Manager</li>
-									<li>Sales Associate</li>
-								</ul>
-								<ul class="column edit">
-									<li>Delete</li>
-									<li>Delete</li>
-									<li>Delete</li>
-									<li>Delete</li>
-								</ul>
-						  </div>
-						  <h3>Coldwell</h3>
-						  <div>
-						  	<ul class="column">
-									<li>1245677895</li>
-									<li>1245677895</li>
-									<li>1245677895</li>
-									<li>1245677895</li>
-								</ul>
-								<ul class="column">
-									<li>Broker/Owner/Manager</li>
-									<li>Sales Associate</li>
-									<li>Broker/Owner/Manager</li>
-									<li>Sales Associate</li>
-								</ul>
-								<ul class="column edit">
-									<li>Delete</li>
-									<li>Delete</li>
-									<li>Delete</li>
-									<li>Delete</li>
-								</ul>
-						  </div>
-						  <h3>Sothebys</h3>
-						  <div>
-						  	<ul class="column">
-									<li>1245677895</li>
-									<li>1245677895</li>
-									<li>1245677895</li>
-									<li>1245677895</li>
-								</ul>
-								<ul class="column">
-									<li>Broker/Owner/Manager</li>
-									<li>Sales Associate</li>
-									<li>Broker/Owner/Manager</li>
-									<li>Sales Associate</li>
-								</ul>
-								<ul class="column edit">
-									<li>Delete</li>
-									<li>Delete</li>
-									<li>Delete</li>
-									<li>Delete</li>
-								</ul>
-						  </div>
-						  <h3>Regions</h3>
-						  <div>
-						  	<ul class="column">
-									<li>1245677895</li>
-									<li>1245677895</li>
-									<li>1245677895</li>
-									<li>1245677895</li>
-								</ul>
-								<ul class="column">
-									<li>Broker/Owner/Manager</li>
-									<li>Sales Associate</li>
-									<li>Broker/Owner/Manager</li>
-									<li>Sales Associate</li>
-								</ul>
-								<ul class="column edit">
-									<li>Delete</li>
-									<li>Delete</li>
-									<li>Delete</li>
-									<li>Delete</li>
-								</ul>
-						  </div>
+					<div id="accordion">
+						<h3>Realogy</h3>
+						<div>
+							<ul class="column">
+								<li>1245677895</li>
+								<li>1245677895</li>
+								<li>1245677895</li>
+								<li>1245677895</li>
+							</ul>
+							<ul class="column">
+								<li>Broker/Owner/Manager</li>
+								<li>Sales Associate</li>
+								<li>Broker/Owner/Manager</li>
+								<li>Sales Associate</li>
+							</ul>
+							<ul class="column edit">
+								<li>Delete</li>
+								<li>Delete</li>
+								<li>Delete</li>
+								<li>Delete</li>
+							</ul>
+						</div>
+						<h3>Coldwell</h3>
+						<div>
+							<ul class="column">
+								<li>1245677895</li>
+								<li>1245677895</li>
+								<li>1245677895</li>
+								<li>1245677895</li>
+							</ul>
+							<ul class="column">
+								<li>Broker/Owner/Manager</li>
+								<li>Sales Associate</li>
+								<li>Broker/Owner/Manager</li>
+								<li>Sales Associate</li>
+							</ul>
+							<ul class="column edit">
+								<li>Delete</li>
+								<li>Delete</li>
+								<li>Delete</li>
+								<li>Delete</li>
+							</ul>
+						</div>
+						<h3>Sothebys</h3>
+						<div>
+							<ul class="column">
+								<li>1245677895</li>
+								<li>1245677895</li>
+								<li>1245677895</li>
+								<li>1245677895</li>
+							</ul>
+							<ul class="column">
+								<li>Broker/Owner/Manager</li>
+								<li>Sales Associate</li>
+								<li>Broker/Owner/Manager</li>
+								<li>Sales Associate</li>
+							</ul>
+							<ul class="column edit">
+								<li>Delete</li>
+								<li>Delete</li>
+								<li>Delete</li>
+								<li>Delete</li>
+							</ul>
+						</div>
+						<h3>Regions</h3>
+						<div>
+							<ul class="column">
+								<li>1245677895</li>
+								<li>1245677895</li>
+								<li>1245677895</li>
+								<li>1245677895</li>
+							</ul>
+							<ul class="column">
+								<li>Broker/Owner/Manager</li>
+								<li>Sales Associate</li>
+								<li>Broker/Owner/Manager</li>
+								<li>Sales Associate</li>
+							</ul>
+							<ul class="column edit">
+								<li>Delete</li>
+								<li>Delete</li>
+								<li>Delete</li>
+								<li>Delete</li>
+							</ul>
 						</div>
 					</div>
 				</div>
-			</section>
-
-		</div>
+			</div>
+		</section>
 
 	</div>
-	<!-- main page end -->
 
-	<!-- pop-up message -->
-	<div class="overlay hidden">
-		<div class="box">
-			<h2>Are you sure you want to delete?</h2>
-			<button>Cancel</button>
-			<button>OK</button>
-		</div>
+</div>
+<!-- main page end -->
+
+<!-- pop-up message -->
+<div class="overlay hidden">
+	<div class="box">
+		<h2>Are you sure you want to delete?</h2>
+		<button>Cancel</button>
+		<button>OK</button>
 	</div>
-	<!-- end pop-up message -->
+</div>
+<!-- end pop-up message -->
 
-	<script src="js/api/jquery-3.1.1.min.js"></script>
-	<script src="js/api/jquery-ui.js"></script>
-	<script src="js/api/main.js"></script>
-	<script src="js/api/scroll.js"></script>
-    <script src="js/api/puremvc-1.0.1.min.js"></script>
-	<script src="js/app.min.js"></script>
-	<script>ApplicationFacade.getInstance("app").startup();</script>
+<script src="js/api/jquery-3.1.1.min.js"></script>
+<script src="js/api/jquery-ui.js"></script>
+<script src="js/api/main.js"></script>
+<script src="js/api/scroll.js"></script>
+<script src="js/api/puremvc-1.0.1.min.js"></script>
+<script src="js/app.min.js"></script>
+<script>ApplicationFacade.getInstance("app").startup();</script>
 
 </body>
 </html>
