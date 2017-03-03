@@ -48,7 +48,8 @@
     };
 
     Brand.prototype.delete = function(id) {
-        this.delegate.service(new model.vo.RequestVO(id, AppConstants.DELETE_BRANDS));
+        this.delegate.popup(new model.vo.RequestVO(id, AppConstants.DELETE_BRANDS), "Are you sure you want to delete?");
+        //this.delegate.service(new model.vo.RequestVO(id, AppConstants.DELETE_BRANDS));
     };
 
     Brand.prototype.delete_success = function(requestVO) {

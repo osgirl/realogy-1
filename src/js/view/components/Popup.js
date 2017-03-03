@@ -11,21 +11,21 @@
 
     function Popup(){}
 
-    Popup.prototype.requestAlert = function(serviceRequest) {
+    Popup.prototype.requestAlert = function(requestVO, message) {
         return new Promise(function(resolve, reject){
-            alertMessage.innerHTML = serviceRequest.requestVO.popupData.message;
+            alertMessage.innerHTML = message;
             alert.classList.remove('hidden');
             alertOK.addEventListener('click', function handler(event){
                 alertOK.removeEventListener('click', handler);
                 alert.classList.add('hidden');
-                reject(serviceRequest);
+                reject(requestVO);
             });
         });
     };
 
-    Popup.prototype.requestConfirm = function(serviceRequest) {
+    Popup.prototype.requestConfirm = function(requestVO, message) {
         return new Promise(function(resolve, reject){
-            confirmMessage.innerHTML = serviceRequest.requestVO.popupData.message;
+            confirmMessage.innerHTML = message;
             confirm.classList.remove('hidden');
             confirmOK.addEventListener('click', ok);
             confirmCancel.addEventListener('click', cancel);
@@ -34,13 +34,13 @@
                 confirmOK.removeEventListener('click', ok);
                 confirmCancel.removeEventListener('click', cancel);
                 confirm.classList.add('hidden');
-                resolve(serviceRequest);
+                resolve(requestVO);
             }
             function cancel(event) {
                 confirmOK.removeEventListener('click', ok);
                 confirmCancel.removeEventListener('click', cancel);
                 confirm.classList.add('hidden');
-                reject(serviceRequest);
+                reject(requestVO);
             }
         });
     };

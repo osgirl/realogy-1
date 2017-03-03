@@ -9,19 +9,27 @@
         var self = this;
         function IDelegate(){
             this.service = self.service.bind(self);
+            this.popup = self.popup.bind(self);
         }
         var delegate = new IDelegate();
         this.login = new view.components.Login(delegate);
         this.brand = new view.components.Brand(delegate);
+        this.popup = new view.components.Popup();
+    };
+
+    Application.prototype.service = function(requestVO) {
+        this.delegate.service(requestVO);
+    };
+
+    Application.prototype.popup = function(requestVO, message) {
+        var self = this;
+        this.popup.requestConfirm(requestVO, message)
+            .then(function(requestVO){self.delegate.service(requestVO)}, function(){})
     };
 
     Application.prototype.onhashchange = function(event) {
         this.login.onhashchange(event);
         this.brand.onhashchange(event);
-    };
-
-    Application.prototype.service = function(requestVO) {
-        this.delegate.service(requestVO);
     };
 
     Application.prototype.service_result = function(requestVO) {

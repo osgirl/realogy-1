@@ -198,16 +198,29 @@
 		</section>
 
 	</div>
-
 </div>
+
 <!-- main page end -->
 
-<!-- pop-up message -->
-<div class="overlay hidden">
+<!-- pop-up message cancel/ok -->
+<div id="confirm" class="overlay ">
 	<div class="box">
-		<h2>Are you sure you want to delete?</h2>
-		<button>Cancel</button>
-		<button>OK</button>
+		<h2 id="confirmMessage">Are you sure you want to delete?</h2>
+		<div>
+			<button id="confirmCancel">Cancel</button>
+			<button id="confirmOK">OK</button>
+		</div>
+	</div>
+</div>
+<!-- end pop-up message -->
+
+<!-- pop-up message ok -->
+<div id="alert" class="overlay hidden">
+	<div class="box">
+		<h2 id="alertMessage">Are you sure you want to delete?</h2>
+		<div>
+			<button id="alertOK">OK</button>
+		</div>
 	</div>
 </div>
 <!-- end pop-up message -->
