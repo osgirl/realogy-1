@@ -27,8 +27,15 @@ ApplicationFacade.getInstance = function(multitonKey) {
 };
 
 ApplicationFacade.STARTUP = 'startup';
-ApplicationFacade.SERVICE = 'service';
-ApplicationFacade.SERVICE_RESULT = 'serviceResult';
-ApplicationFacade.SERVICE_FAULT = 'serviceFault';
-ApplicationFacade.POPUP_RESULT = "popupResult";
-ApplicationFacade.POPUP_FAULT = "popupFault";
+
+ApplicationFacade.ENTITLEMENT = 'entitlement';
+ApplicationFacade.ENTITLEMENT_RESULT = 'entitlementResult';
+ApplicationFacade.ENTITLEMENT_FAULT = 'entitlementFault';
+
+ApplicationFacade.BRAND = 'brand';
+ApplicationFacade.BRAND_RESULT = 'brandResult';
+ApplicationFacade.BRAND_FAULT = 'brandFault';
+
+ApplicationFacade.PRODUCT = 'product';
+ApplicationFacade.PRODUCT_RESULT = 'productResult';
+ApplicationFacade.PRODUCT_FAULT = 'productFault';

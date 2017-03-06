@@ -1,63 +1,78 @@
 (function(){
 
-    function Brand(delegate) {
-        this.delegate = delegate;
-        document.getElementById("brandAdd").addEventListener("click", this.post.bind(this));
-        this.list = document.getElementById("brandList");
-        this.deleteList = document.getElementById("brandDeleteList");
-
-        this.delegate.service(new model.vo.RequestVO(null, AppConstants.GET_BRANDS));
+    function Brand() {
+        var self = this;
+        this.element = document.getElementById("brand_list");
+        document.getElementById("brandAdd").addEventListener("click", function(event){
+            var name = document.getElementById("brand").value;
+            if(name.trim() != "") {
+                Brand.prototype.post.call(self, {name: name, event: event});
+            }
+        });
     }
 
-    Brand.prototype.get_success = function(requestVO) {
-        this.list.innerHTML = this.deleteList.innerHTML = "";
-        var data = requestVO.getResultData();
-        for(var i=0; i<data.length; i++) {
-            this.addNode(data[i]);
+    Brand.prototype.initializeBrand = function () {
+        this.get();
+    };
+
+    Brand.prototype.get = function() {
+        this.delegate.service(new model.vo.RequestVO(null, AppConstants.GET));
+    };
+
+    Brand.prototype.post = function(data) {
+        this.delegate.service(new model.vo.RequestVO(data, AppConstants.POST));
+    };
+
+    Brand.prototype.delete = function(data) {
+        this.delegate.requestConfirm(new model.vo.RequestVO(data, AppConstants.DELETE), "Are you sure you want to delete?");
+    };
+
+    Brand.prototype.result = function(requestVO) {
+        switch (requestVO.getRequestType()) {
+            case AppConstants.GET:
+                this.element.innerHTML = "";
+                var data = requestVO.getResultData();
+                for(var i=0; i<data.length; i++) {
+                    this.appendChild(data[i]);
+                }
+                break;
+            case AppConstants.POST:
+                document.getElementById("brand").value = "";
+                var data = requestVO.getResultData();
+                this.appendChild(data);
+                break;
+            case AppConstants.DELETE:
+                var data = requestVO.getRequestData();
+                this.removeChild(data);
+                break;
         }
     };
 
-    Brand.prototype.addNode = function(data) {
+    Brand.prototype.fault = function(requestVO) {
+        console.error(requestVO);
+    };
+
+    Brand.prototype.appendChild = function(data) {
         var self = this;
         var li = document.createElement("li");
-        li.setAttribute("id", "brand_" + data.id);
-        li.innerHTML = data.name;
-        this.list.appendChild(li);
+        li.innerHTML = "<p>" + data.name + "</p>";
 
-        li = document.createElement("li");
-        li.setAttribute("id", "brand_delete_" + data.id);
-        li.innerHTML = "Delete";
-        this.deleteList.appendChild(li);
+        var p = document.createElement("p");
+        p.setAttribute("class", "edit");
+        p.innerHTML = "Delete";
+        li.appendChild(p);
 
-        li.addEventListener("click", function(id){
-            return function(event) {
-                Brand.prototype.delete.call(self, id);
-            };
-        }(data.id));
+        p.addEventListener("click", function(event){
+            Brand.prototype.delete.call(self, {id: data.id, event: event});
+        });
+
+        this.element.appendChild(li);
     };
 
-    Brand.prototype.post = function(event) {
-        var data = document.getElementById("brand").value;
-        if(data.trim() != "") {
-            this.delegate.service(new model.vo.RequestVO(data, AppConstants.POST_BRANDS));
-        }
-    };
-
-    Brand.prototype.post_success = function(requestVO) {
-        document.getElementById("brand").value = "";
-        var data = requestVO.getResultData();
-        this.addNode(data);
-    };
-
-    Brand.prototype.delete = function(id) {
-        this.delegate.requestConfirm(new model.vo.RequestVO(id, AppConstants.DELETE_BRANDS), "Are you sure you want to delete?");
-    };
-
-    Brand.prototype.delete_success = function(requestVO) {
-        var element = document.getElementById("brand_" + requestVO.getRequestData());
-        element.parentNode.removeChild(element);
-        element = document.getElementById("brand_delete_" + requestVO.getRequestData( ));
-        element.parentNode.removeChild(element);
+    Brand.prototype.removeChild = function(data) {
+        var element = data.event.target;
+        var grandparent = element.parentNode.parentNode;
+        grandparent.removeChild(element.parentNode);
     };
 
     Brand.prototype.onhashchange = function(event) {
@@ -67,6 +82,10 @@
             case "/brands":
                 break;
         }
+    };
+
+    Brand.prototype.setDelegate = function(delegate) {
+        this.delegate = delegate;
     };
 
     view.components.Brand = Brand;

@@ -52,14 +52,14 @@
                 }
             };
             xmlHttpRequest.addEventListener("error", function(error){requestVO.setResultData(error);reject(requestVO);});
-            xmlHttpRequest.send(JSON.stringify({name: requestVO.getRequestData()}));
+            xmlHttpRequest.send(JSON.stringify(requestVO.getRequestData()));
         });
     };
 
     Brand.prototype.delete = function(requestVO) {
         return new Promise(function(resolve, reject) {
             var xmlHttpRequest = new XMLHttpRequest();
-            xmlHttpRequest.open("DELETE", "http://localhost:8080/brands/" + requestVO.getRequestData(), true);
+            xmlHttpRequest.open("DELETE", "http://localhost:8080/brands/" + requestVO.getRequestData().id, true);
             xmlHttpRequest.onreadystatechange = function() {
                 if (xmlHttpRequest.readyState === 4) {
                     if(xmlHttpRequest.status === 204) {

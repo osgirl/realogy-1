@@ -8,34 +8,16 @@
     ApplicationMediator.prototype.constructor = ApplicationMediator;
 
     ApplicationMediator.prototype.onRegister = function() {
-        var self = this;
-        function IDelegate(){
-            this.service = self.service.bind(self);
-        }
-        this.viewComponent.setDelegate(new IDelegate());
-        this.viewComponent.creationComplete();
+        this.facade.registerMediator(new view.BrandMediator());
+        this.facade.registerMediator(new view.ProductMediator());
     };
 
-    ApplicationMediator.prototype.service = function(requestVO) {
-        this.sendNotification(ApplicationFacade.SERVICE, requestVO);
+    ApplicationMediator.prototype.requestConfirm = function(requestVO, message) {
+        return this.viewComponent.requestConfirm(requestVO, message);
     };
 
-    ApplicationMediator.prototype.listNotificationInterests = function() {
-        return [
-            ApplicationFacade.SERVICE_RESULT,
-            ApplicationFacade.SERVICE_FAULT
-        ];
-    };
-
-    ApplicationMediator.prototype.handleNotification = function(notification) {
-        switch(notification.getName()) {
-            case ApplicationFacade.SERVICE_RESULT:
-                this.viewComponent.service_result(notification.getBody());
-                break;
-            case ApplicationFacade.SERVICE_FAULT:
-                this.viewComponent.service_fault(notification.getBody());
-                break;
-        }
+    ApplicationMediator.prototype.requestAlert = function(requestVO, message) {
+        return this.viewComponent.requestAlert(requestVO, message);
     };
 
     ApplicationMediator.NAME = 'ApplicationMediator';

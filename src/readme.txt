@@ -19,3 +19,23 @@
         <li>Delete</li>
     </ul>
 </div>
+
+
+<ul id="brand_list">
+    <li>
+        <p>Brand Name</p>
+        <p class="edit">Delete</p>
+    </li>
+    <li>
+        <p>Brand Name</p>
+        <p class="edit">Delete</p>
+    </li>
+    <li>
+        <p>Brand Name</p>
+        <p class="edit">Delete</p>
+    </li>
+    <li>
+        <p>Brand Name</p>
+        <p class="edit">Delete</p>
+    </li>
+</ul>
