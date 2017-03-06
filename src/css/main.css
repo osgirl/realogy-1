@@ -375,34 +375,26 @@ div.main {
 	text-transform: uppercase;
 }
 
-.main .container section div.content p {
-	font-size: 13px;
-	margin: 0 0 10px 0;
-}
-
-.main .container section div.content .column {
-	width: 50%;
-	float: left;
+.main .container section div.content ul {
 	padding: 0;
 	list-style: none;
 }
 
-.main .container section div.content .column li {
+.main .container section div.content p {
+	float: left;
+	width: 50%;
 	font-size: 13px;
 	margin: 0 0 10px 0;
 }
 
-.main .container section div.content #accordion .column {
+.main .container section div.content #accordion p {
 	width: 33.3333%;
 }
 
-.main .container section div.content .column.edit {
+.main .container section div.content .edit {
 	text-align: right;
 	color: #015955;
 	font-weight: bold;
-}
-
-.main .container section div.content .column.edit li {
 	cursor: pointer;
 }
 
