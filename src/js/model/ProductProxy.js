@@ -13,6 +13,11 @@
             .then(this.result.bind(this, serviceRequest), this.fault.bind(this, serviceRequest));
     };
 
+    ProductProxy.prototype.post = function(serviceRequest) {
+        this.product.post(serviceRequest.getRequestVO())
+            .then(this.result.bind(this, serviceRequest), this.fault.bind(this, serviceRequest));
+    };
+
     ProductProxy.prototype.delete = function(serviceRequest) {
         this.product.delete(serviceRequest.getRequestVO())
             .then(this.result.bind(this, serviceRequest), this.fault.bind(this, serviceRequest));

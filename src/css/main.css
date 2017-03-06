@@ -387,7 +387,7 @@ div.main {
 	margin: 0 0 10px 0;
 }
 
-.main .container section div.content #accordion p {
+.main .container section div.content .accordion p {
 	width: 33.3333%;
 }
 
@@ -430,7 +430,7 @@ html .ui-button.ui-state-disabled:active {
 	padding: 5px;
 }
 
-.main .container section div.content #accordion h3 {
+.main .container section div.content .accordion h3 {
 	position: relative;
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -458,26 +458,26 @@ html .ui-button.ui-state-disabled:active {
 	text-transform: none;
 }
 
-.main .container section div.content #accordion h3 p {
+.main .container section div.content .accordion h3 p {
 	position: absolute;
 	top: 7px;
 	right: 20px;
 }
 
-#accordion .ui-icon {
+.accordion .ui-icon {
 	position: absolute;
 	right: 15px;
 	top: 10px;
 }
 
-#accordion .ui-icon,
-#accordion .ui-widget-content .ui-icon {
+.accordion .ui-icon,
+.accordion .ui-widget-content .ui-icon {
 	background: url(../img/arrow-green.png) no-repeat center center;
 	background-size: 10px;
 }
 
-#accordion .ui-state-active .ui-icon,
-#accordion .ui-button:active .ui-icon {
+.accordion .ui-state-active .ui-icon,
+.accordion .ui-button:active .ui-icon {
 	-webkit-transform: rotate(-180deg);
 	-moz-transform: rotate(-180deg);
 	-ms-transform: rotate(-180deg);

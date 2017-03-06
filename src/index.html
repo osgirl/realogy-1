@@ -80,22 +80,7 @@
 					<button id="brandAdd">Add</button>
 					<h1>Manage Brands</h1>
 					<ul id="brand_list">
-						<li>
-							<p>Brand Name</p>
-							<p class="edit">Delete</p>
-						</li>
-						<li>
-							<p>Brand Name</p>
-							<p class="edit">Delete</p>
-						</li>
-						<li>
-							<p>Brand Name</p>
-							<p class="edit">Delete</p>
-						</li>
-						<li>
-							<p>Brand Name</p>
-							<p class="edit">Delete</p>
-						</li>
+
 					</ul>
 				</div>
 			</div>
@@ -103,70 +88,21 @@
 			<!-- tab 2 -->
 			<div id="tabs-2" class="content">
 				<div class="wrapper">
-					<input type="text" name="product-id" placeholder="Enter Product ID">
-					<select>
+					<input type="text" name="product-id" placeholder="Enter Product ID" id="productId">
+					<select id="category_select">
 						<option selected disabled>Please Select a Category</option>
-						<option value="">Broker/Owner/Manager</option>
-						<option value="">Sales Associate</option>
+						<option value="1">Broker/Owner/Manager</option>
+						<option value="2">Sales Associate</option>
 					</select>
 					<select id="brand_select">
 						<option selected disabled>Please Select a Brand</option>
 					</select>
-					<button>Add</button>
+					<button id="productAdd">Add</button>
 
 					<h1>Manage Product IDs</h1>
 
-					<div id="product">
-						<h3>Realogy</h3>
-						<div>
-							<ul>
-								<li>
-									<p>1245677895</p>
-									<p>Broker/Owner/Manager</p>
-									<p class="edit">Delete</p>
-								</li>
-								<li>
-									<p>1245677895</p>
-									<p>Sales Associate</p>
-									<p class="edit">Delete</p>
-								</li>
-								<li>
-									<p>1245677895</p>
-									<p>Broker/Owner/Manager</p>
-									<p class="edit">Delete</p>
-								</li>
-								<li>
-									<p>1245677895</p>
-									<p>Broker/Owner/Manager</p>
-									<p class="edit">Delete</p>
-								</li>
-							</ul>
-						</div>
-						<h3>Coldwell</h3>
-						<div>
-							<ul>
-								<li>
-									<p>1245677895</p>
-									<p>Broker/Owner/Manager</p>
-									<p class="edit">Delete</p>
-								</li>
-								<li>
-									<p>1245677895</p>
-									<p>Sales Associate</p>
-									<p class="edit">Delete</p>
-								</li>
-								<li>
-									<p>1245677895</p>
-									<p>Broker/Owner/Manager</p>
-									<p class="edit">Delete</p>
-								</li>
-								<li>
-									<p>1245677895</p>
-									<p>Broker/Owner/Manager</p>
-									<p class="edit">Delete</p>
-								</li>
-							</ul>
-						</div>
+					<div class="accordion" id="product">
+
 					</div>
 				</div>
 			</div>

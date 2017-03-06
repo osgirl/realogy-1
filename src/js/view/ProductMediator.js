@@ -10,11 +10,17 @@
     ProductMediator.prototype.onRegister = function() {
         var self = this;
         function IDelegate(){
+            this.requestConfirm = self.requestConfirm.bind(self);
             this.service = self.service.bind(self);
         }
         this.viewComponent.setDelegate(new IDelegate());
-        this.viewComponent.initializeProduct();
 
+    };
+
+    ProductMediator.prototype.requestConfirm = function(requestVO, message) {
+        var applicationMediator = this.facade.retrieveMediator(view.ApplicationMediator.NAME);
+        applicationMediator.requestConfirm(requestVO, message)
+            .then(ProductMediator.prototype.service.bind(this));
     };
 
     ProductMediator.prototype.service = function(requestVO) {
@@ -23,22 +29,22 @@
 
     ProductMediator.prototype.listNotificationInterests = function() {
         return [
+            ApplicationFacade.BRAND_RESULT,
             ApplicationFacade.PRODUCT_RESULT,
-            ApplicationFacade.PRODUCT_FAULT,
-            ApplicationFacade.BRAND_RESULT
+            ApplicationFacade.PRODUCT_FAULT
         ];
     };
 
     ProductMediator.prototype.handleNotification = function(notification) {
         switch(notification.getName()) {
+            case ApplicationFacade.BRAND_RESULT:
+                this.viewComponent.appendBrands(notification.getBody());
+                break;
             case ApplicationFacade.PRODUCT_RESULT:
                 this.viewComponent.result(notification.getBody());
                 break;
             case ApplicationFacade.PRODUCT_FAULT:
                 this.viewComponent.fault(notification.getBody());
-                break;
-            case ApplicationFacade.BRAND_RESULT:
-                this.viewComponent.render(notification.getBody());
                 break;
         }
     };

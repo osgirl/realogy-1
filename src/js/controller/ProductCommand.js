@@ -16,6 +16,9 @@
             case AppConstants.GET:
                 productProxy.get(serviceRequest);
                 break;
+            case AppConstants.POST:
+                productProxy.post(serviceRequest);
+                break;
             case AppConstants.DELETE:
                 productProxy.delete(serviceRequest);
                 break;

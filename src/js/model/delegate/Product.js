@@ -30,6 +30,33 @@
         });
     };
 
+    Product.prototype.post = function(requestVO) {
+        return new Promise(function(resolve, reject) {
+            var xmlHttpRequest = new XMLHttpRequest();
+            xmlHttpRequest.open("POST", "http://localhost:8080/products", true);
+            xmlHttpRequest.onreadystatechange = function() {
+                if (xmlHttpRequest.readyState === 4) {
+                    try {
+                        var data = JSON.parse(xmlHttpRequest.response);
+                    } catch (error) {
+                        requestVO.setResultData(error);
+                        reject(requestVO);
+                        return;
+                    }
+                    if(xmlHttpRequest.status === 201) {
+                        requestVO.setResultData(data);
+                        resolve(requestVO);
+                    } else {
+                        requestVO.setResultData(data);
+                        reject(requestVO);
+                    }
+                }
+            };
+            xmlHttpRequest.addEventListener("error", function(error){requestVO.setResultData(error);reject(requestVO);});
+            xmlHttpRequest.send(JSON.stringify(requestVO.getRequestData()));
+        });
+    };
+
     Product.prototype.delete = function(requestVO) {
         return new Promise(function(resolve, reject) {
             var xmlHttpRequest = new XMLHttpRequest();

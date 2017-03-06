@@ -10,14 +10,14 @@
     EntitlementCommand.prototype.execute = function(notification) {
         var requestVO = notification.getBody();
         var serviceRequest = new model.request.ServiceRequest(requestVO, this.result, this);
-        var serviceProxy = this.facade.retrieveProxy(model.ServiceProxy.NAME);
+        var entitlementProxy = this.facade.retrieveProxy(model.EntitlementProxy.NAME);
 
         switch(requestVO.getRequestType()) {
             case AppConstants.SIGN_IN_WITH_CREDENTIALS:
-                serviceProxy.signInWithCredentials(serviceRequest);
+                entitlementProxy.signInWithCredentials(serviceRequest);
                 break;
             case AppConstants.RENEW_AUTH_TOKEN:
-                serviceProxy.renewAuthToken(serviceRequest);
+                entitlementProxy.renewAuthToken(serviceRequest);
                 break;
             default:
                 console.log("Unknown Request - EntitlementCommand", requestVO);
