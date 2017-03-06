@@ -28,6 +28,15 @@
             case AppConstants.DELETE_BRANDS:
                 serviceProxy.deleteBrands(serviceRequest);
                 break;
+            case AppConstants.GET_PRODUCTS:
+                serviceProxy.getProducts(serviceRequest);
+                break;
+            case AppConstants.DELETE_PRODUCTS:
+                serviceProxy.deleteProducts(serviceRequest);
+                break;
+            default:
+                console.log("Unknown Request", requestVO);
+                break;
         }
     };
 

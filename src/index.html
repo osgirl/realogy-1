@@ -68,8 +68,8 @@
 	<div id="tabs" class="container">
 
 		<ul class="nav">
-			<li class="active"><a href="#tabs-1">Create Brand</a></li>
-			<li><a href="#tabs-2">Create Product ID</a></li>
+			<li class="active"><a data-hash="!/brands" data-href="#tabs-1">Create Brand</a></li>
+			<li><a data-hash="!/products" data-href="#tabs-2">Create Product ID</a></li>
 		</ul>
 
 		<section>
@@ -96,102 +96,15 @@
 						<option value="">Broker/Owner/Manager</option>
 						<option value="">Sales Associate</option>
 					</select>
-					<select>
+					<select id="brandSelect">
 						<option selected disabled>Please Select a Brand</option>
-						<option value="">Realogy</option>
-						<option value="">Coldwell</option>
-						<option value="">Sothebys</option>
-						<option value="">Regions</option>
 					</select>
 					<button>Add</button>
 
 					<h1>Manage Product IDs</h1>
 
 					<div id="accordion">
-						<h3>Realogy</h3>
-						<div>
-							<ul class="column">
-								<li>1245677895</li>
-								<li>1245677895</li>
-								<li>1245677895</li>
-								<li>1245677895</li>
-							</ul>
-							<ul class="column">
-								<li>Broker/Owner/Manager</li>
-								<li>Sales Associate</li>
-								<li>Broker/Owner/Manager</li>
-								<li>Sales Associate</li>
-							</ul>
-							<ul class="column edit">
-								<li>Delete</li>
-								<li>Delete</li>
-								<li>Delete</li>
-								<li>Delete</li>
-							</ul>
-						</div>
-						<h3>Coldwell</h3>
-						<div>
-							<ul class="column">
-								<li>1245677895</li>
-								<li>1245677895</li>
-								<li>1245677895</li>
-								<li>1245677895</li>
-							</ul>
-							<ul class="column">
-								<li>Broker/Owner/Manager</li>
-								<li>Sales Associate</li>
-								<li>Broker/Owner/Manager</li>
-								<li>Sales Associate</li>
-							</ul>
-							<ul class="column edit">
-								<li>Delete</li>
-								<li>Delete</li>
-								<li>Delete</li>
-								<li>Delete</li>
-							</ul>
-						</div>
-						<h3>Sothebys</h3>
-						<div>
-							<ul class="column">
-								<li>1245677895</li>
-								<li>1245677895</li>
-								<li>1245677895</li>
-								<li>1245677895</li>
-							</ul>
-							<ul class="column">
-								<li>Broker/Owner/Manager</li>
-								<li>Sales Associate</li>
-								<li>Broker/Owner/Manager</li>
-								<li>Sales Associate</li>
-							</ul>
-							<ul class="column edit">
-								<li>Delete</li>
-								<li>Delete</li>
-								<li>Delete</li>
-								<li>Delete</li>
-							</ul>
-						</div>
-						<h3>Regions</h3>
-						<div>
-							<ul class="column">
-								<li>1245677895</li>
-								<li>1245677895</li>
-								<li>1245677895</li>
-								<li>1245677895</li>
-							</ul>
-							<ul class="column">
-								<li>Broker/Owner/Manager</li>
-								<li>Sales Associate</li>
-								<li>Broker/Owner/Manager</li>
-								<li>Sales Associate</li>
-							</ul>
-							<ul class="column edit">
-								<li>Delete</li>
-								<li>Delete</li>
-								<li>Delete</li>
-								<li>Delete</li>
-							</ul>
-						</div>
+
 					</div>
 				</div>
 			</div>
@@ -203,7 +116,7 @@
 <!-- main page end -->
 
 <!-- pop-up message cancel/ok -->
-<div id="confirm" class="overlay ">
+<div id="confirm" class="overlay hidden">
 	<div class="box">
 		<h2 id="confirmMessage">Are you sure you want to delete?</h2>
 		<div>
@@ -227,7 +140,6 @@
 
 <script src="js/api/jquery-3.1.1.min.js"></script>
 <script src="js/api/jquery-ui.js"></script>
-<script src="js/api/main.js"></script>
 <script src="js/api/scroll.js"></script>
 <script src="js/api/puremvc-1.0.1.min.js"></script>
 <script src="js/app.min.js"></script>

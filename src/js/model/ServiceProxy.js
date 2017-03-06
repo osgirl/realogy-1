@@ -4,6 +4,7 @@
         puremvc.Proxy.call(this, this.constructor.NAME, data);
         this.entitlement = new model.delegate.Entitlement();
         this.brand = new model.delegate.Brand();
+        this.product = new model.delegate.Product();
     }
 
     ServiceProxy.prototype = Object.create(puremvc.Proxy.prototype);
@@ -31,6 +32,16 @@
 
     ServiceProxy.prototype.deleteBrands = function(serviceRequest) {
         this.brand.delete(serviceRequest.getRequestVO())
+            .then(this.result.bind(this, serviceRequest), this.fault.bind(this, serviceRequest));
+    };
+
+    ServiceProxy.prototype.getProducts = function(serviceRequest) {
+        this.product.get(serviceRequest.getRequestVO())
+            .then(this.result.bind(this, serviceRequest), this.fault.bind(this, serviceRequest));
+    };
+
+    ServiceProxy.prototype.deleteProducts = function(serviceRequest) {
+        this.product.delete(serviceRequest.getRequestVO())
             .then(this.result.bind(this, serviceRequest), this.fault.bind(this, serviceRequest));
     };
 

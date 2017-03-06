@@ -5,20 +5,9 @@
         document.getElementById("brandAdd").addEventListener("click", this.post.bind(this));
         this.list = document.getElementById("brandList");
         this.deleteList = document.getElementById("brandDeleteList");
+
+        this.delegate.service(new model.vo.RequestVO(null, AppConstants.GET_BRANDS));
     }
-
-    Brand.prototype.post = function(event) {
-        var data = document.getElementById("brand").value;
-        if(data.trim() != "") {
-            this.delegate.service(new model.vo.RequestVO(data, AppConstants.POST_BRANDS));
-        }
-    };
-
-    Brand.prototype.post_success = function(requestVO) {
-        document.getElementById("brand").value = "";
-        var data = requestVO.getResultData();
-        this.addNode(data);
-    };
 
     Brand.prototype.get_success = function(requestVO) {
         this.list.innerHTML = this.deleteList.innerHTML = "";
@@ -47,15 +36,27 @@
         }(data.id));
     };
 
+    Brand.prototype.post = function(event) {
+        var data = document.getElementById("brand").value;
+        if(data.trim() != "") {
+            this.delegate.service(new model.vo.RequestVO(data, AppConstants.POST_BRANDS));
+        }
+    };
+
+    Brand.prototype.post_success = function(requestVO) {
+        document.getElementById("brand").value = "";
+        var data = requestVO.getResultData();
+        this.addNode(data);
+    };
+
     Brand.prototype.delete = function(id) {
-        this.delegate.popup(new model.vo.RequestVO(id, AppConstants.DELETE_BRANDS), "Are you sure you want to delete?");
-        //this.delegate.service(new model.vo.RequestVO(id, AppConstants.DELETE_BRANDS));
+        this.delegate.requestConfirm(new model.vo.RequestVO(id, AppConstants.DELETE_BRANDS), "Are you sure you want to delete?");
     };
 
     Brand.prototype.delete_success = function(requestVO) {
         var element = document.getElementById("brand_" + requestVO.getRequestData());
         element.parentNode.removeChild(element);
-        element = document.getElementById("brand_delete_" + requestVO.getRequestData());
+        element = document.getElementById("brand_delete_" + requestVO.getRequestData( ));
         element.parentNode.removeChild(element);
     };
 
@@ -64,7 +65,6 @@
         if(hash.indexOf("/brand") == -1) return;
         switch(hash) {
             case "/brands":
-                this.delegate.service(new model.vo.RequestVO(null, AppConstants.GET_BRANDS));
                 break;
         }
     };

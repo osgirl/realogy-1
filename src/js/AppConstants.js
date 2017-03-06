@@ -7,5 +7,5 @@ AppConstants.GET_BRANDS = "GET /brands";
 AppConstants.POST_BRANDS = "POST /brands";
 AppConstants.DELETE_BRANDS = "DELETE /brands/:id";
 
-AppConstants.CONFIRM = "confirm";
-AppConstants.ALERT = "alert";
+AppConstants.GET_PRODUCTS = "GET /products";
+AppConstants.DELETE_PRODUCTS = "DELETE /products/:id";

@@ -37,7 +37,6 @@
     };
 
     Login.prototype.renewAuthToken_success = function(requestVO) {
-        console.log(new Date());
         this.signInWithCredentials_success(requestVO);
     };
 

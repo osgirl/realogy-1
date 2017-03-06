@@ -7,18 +7,18 @@ div.main {
 
 .main header {
 	position: relative;
-	display: -webkit-flex; 
-  display: -moz-flex; 
-  display: -o-flex; 
-  display: -ms-flex; 
-  display: flex;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -o-flex;
+	display: -ms-flex;
+	display: flex;
 
 
-  -webkit-flex-direction: row;
-  -moz-flex-direction: row; 
-  -o-flex-direction: row; 
-  -ms-flex-direction: row; 
-  flex-direction:  row;
+	-webkit-flex-direction: row;
+	-moz-flex-direction: row;
+	-o-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction:  row;
 
 	width: 100%;
 	height: 7%;
@@ -27,17 +27,17 @@ div.main {
 
 .main header .logo,
 .main header .user {
-	display: -webkit-flex; 
-  display: -moz-flex; 
-  display: -o-flex; 
-  display: -ms-flex; 
-  display: flex;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -o-flex;
+	display: -ms-flex;
+	display: flex;
 
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -o-align-items: center;
-  -ms-align-items: center;
-  align-items: center;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-o-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
 
 	width: 50%;
 	height: 100%;
@@ -46,58 +46,58 @@ div.main {
 
 .main header .user {
 	justify-content: flex-end;
-  -ms-flex-pack: flex-end;
+	-ms-flex-pack: flex-end;
 }
 
 .main header .user .clickable {
-	display: -webkit-flex; 
-  display: -moz-flex; 
-  display: -o-flex; 
-  display: -ms-flex; 
-  display: flex;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -o-flex;
+	display: -ms-flex;
+	display: flex;
 
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -o-align-items: center;
-  -ms-align-items: center;
-  align-items: center;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-o-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
 
-  justify-content: center;
-  -ms-flex-pack: center;
+	justify-content: center;
+	-ms-flex-pack: center;
 
-  height: 100%;
-  width: 65px;
-  cursor: pointer;
+	height: 100%;
+	width: 65px;
+	cursor: pointer;
 }
 
 .main header .user-info {
 	position: absolute;
-  bottom: -90px;
-  right: 0;
-  min-width: 210px;
-  height: 90px;
-  background: #fff;
-  z-index: 10;
-  border-right: 1px solid #015955;
-  border-left: 1px solid #015955;
-  border-bottom: 1px solid #015955;
+	bottom: -90px;
+	right: 0;
+	min-width: 210px;
+	height: 90px;
+	background: #fff;
+	z-index: 10;
+	border-right: 1px solid #015955;
+	border-left: 1px solid #015955;
+	border-bottom: 1px solid #015955;
 }
 
 .main header .user-info .current {
 	position: relative;
-	display: -webkit-flex; 
-  display: -moz-flex; 
-  display: -o-flex; 
-  display: -ms-flex; 
-  display: flex;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -o-flex;
+	display: -ms-flex;
+	display: flex;
 
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -o-align-items: center;
-  -ms-align-items: center;
-  align-items: center;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-o-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
 
-  padding: 20px;
+	padding: 20px;
 }
 
 .main header .user-info .current img {
@@ -123,20 +123,20 @@ div.main {
 
 .main .title {
 	position: relative;
-	display: -webkit-flex; 
-  display: -moz-flex; 
-  display: -o-flex; 
-  display: -ms-flex; 
-  display: flex;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -o-flex;
+	display: -ms-flex;
+	display: flex;
 
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -o-align-items: center;
-  -ms-align-items: center;
-  align-items: center;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-o-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
 
-  justify-content: center;
-  -ms-flex-pack: center;
+	justify-content: center;
+	-ms-flex-pack: center;
 
 	width: 100%;
 	height: 6%;
@@ -153,17 +153,17 @@ div.main {
 }
 
 .main .container {
-	display: -webkit-flex; 
-  display: -moz-flex; 
-  display: -o-flex; 
-  display: -ms-flex; 
-  display: flex;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -o-flex;
+	display: -ms-flex;
+	display: flex;
 
-  -webkit-flex-direction: row;
-  -moz-flex-direction: row; 
-  -o-flex-direction: row; 
-  -ms-flex-direction: row; 
-  flex-direction:  row;
+	-webkit-flex-direction: row;
+	-moz-flex-direction: row;
+	-o-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction:  row;
 
 	height: 87%;
 	width: 100%;
@@ -211,17 +211,17 @@ div.main {
 }
 
 .main .container ul.nav li span {
-	display: -webkit-flex; 
-  display: -moz-flex; 
-  display: -o-flex; 
-  display: -ms-flex; 
-  display: flex;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -o-flex;
+	display: -ms-flex;
+	display: flex;
 
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -o-align-items: center;
-  -ms-align-items: center;
-  align-items: center;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-o-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
 
 	position: absolute;
 	top: 0;
@@ -241,11 +241,11 @@ div.main {
 
 .transform {
 	-webkit-transform: rotate(-180deg);
-  -moz-transform: rotate(-180deg);
-  -ms-transform: rotate(-180deg);
-  -o-transform: rotate(-180deg);
-  transform: rotate(-180deg);
-} 
+	-moz-transform: rotate(-180deg);
+	-ms-transform: rotate(-180deg);
+	-o-transform: rotate(-180deg);
+	transform: rotate(-180deg);
+}
 
 .main .container ul.sub-nav {
 	padding-left: 70px;
@@ -295,10 +295,10 @@ div.main {
 .main .container section div.content select,
 .main .container section div.content button.ui-multiselect {
 	margin-top: 15px;
-  background: url(../img/arrow-green.png) rgba(1, 89, 85, 0.2) no-repeat 98% 50%;
-  background-size: 12px;
-  text-indent: 1px;
-  text-overflow: '';
+	background: url(../img/arrow-green.png) rgba(1, 89, 85, 0.2) no-repeat 98% 50%;
+	background-size: 12px;
+	text-indent: 1px;
+	text-overflow: '';
 }
 
 .main .container section #tabs-4 button.ui-multiselect {
@@ -314,13 +314,13 @@ div.main {
 	color: #015955;
 }
 
-.ui-state-hover, 
-.ui-widget-content .ui-state-hover, 
-.ui-widget-header .ui-state-hover, 
-.ui-state-focus, 
-.ui-widget-content .ui-state-focus, 
-.ui-widget-header .ui-state-focus, 
-.ui-button:hover, 
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus,
+.ui-button:hover,
 .ui-button:focus {
 	border-radius: 0;
 	border: none;
@@ -331,20 +331,20 @@ div.main {
 	display: none;
 }
 
-.main .container section div.content input::-webkit-input-placeholder { 
-  color: #666;
+.main .container section div.content input::-webkit-input-placeholder {
+	color: #666;
 }
 
-.main .container section div.content input::-moz-placeholder { 
-  color: #666;
+.main .container section div.content input::-moz-placeholder {
+	color: #666;
 }
 
 .main .container section div.content input:-ms-input-placeholder {
-  color: #666;
+	color: #666;
 }
 
 .main .container section div.content input:-moz-placeholder {
-  color: #666;
+	color: #666;
 }
 
 .main .container section div.content button {
@@ -407,22 +407,22 @@ div.main {
 }
 
 /* accordian styling */
-.ui-state-active, 
-.ui-widget-content .ui-state-active, 
-.ui-widget-header .ui-state-active, 
-a.ui-button:active, 
-.ui-button:active, 
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
 .ui-button.ui-state-active:hover {
 	border: none;
 	border-radius: 0;
 	background: rgba(1, 89, 85, 0.2);
 }
 
-.ui-state-default, 
-.ui-widget-content .ui-state-default, 
-.ui-widget-header .ui-state-default, 
-.ui-button, 
-html .ui-button.ui-state-disabled:hover, 
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+html .ui-button.ui-state-disabled:hover,
 html .ui-button.ui-state-disabled:active {
 	border: none;
 	border-radius: 0;
@@ -440,25 +440,25 @@ html .ui-button.ui-state-disabled:active {
 
 .main .container section div.content #accordion h3 {
 	position: relative;
-  display: -webkit-flex; 
-  display: -moz-flex; 
-  display: -o-flex; 
-  display: -ms-flex; 
-  display: flex;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -o-flex;
+	display: -ms-flex;
+	display: flex;
 
-  -webkit-flex-direction: row-reverse;
-  -moz-flex-direction: row-reverse; 
-  -o-flex-direction: row-reverse; 
-  -ms-flex-direction: row-reverse; 
-  flex-direction:  row-reverse;
+	-webkit-flex-direction: row-reverse;
+	-moz-flex-direction: row-reverse;
+	-o-flex-direction: row-reverse;
+	-ms-flex-direction: row-reverse;
+	flex-direction:  row-reverse;
 
-  -webkit-align-items: flex-end;
-  -moz-align-items: flex-end;
-  -o-align-items: flex-end;
-  -ms-align-items: flex-end;
-  align-items: flex-end;
+	-webkit-align-items: flex-end;
+	-moz-align-items: flex-end;
+	-o-align-items: flex-end;
+	-ms-align-items: flex-end;
+	align-items: flex-end;
 
-  justify-content: flex-end;
+	justify-content: flex-end;
 	-ms-flex-pack: flex-end;
 
 	padding: 5px 10px;
@@ -478,7 +478,7 @@ html .ui-button.ui-state-disabled:active {
 	top: 10px;
 }
 
-#accordion .ui-icon, 
+#accordion .ui-icon,
 #accordion .ui-widget-content .ui-icon {
 	background: url(../img/arrow-green.png) no-repeat center center;
 	background-size: 10px;
@@ -487,27 +487,27 @@ html .ui-button.ui-state-disabled:active {
 #accordion .ui-state-active .ui-icon,
 #accordion .ui-button:active .ui-icon {
 	-webkit-transform: rotate(-180deg);
-  -moz-transform: rotate(-180deg);
-  -ms-transform: rotate(-180deg);
-  -o-transform: rotate(-180deg);
-  transform: rotate(-180deg);
+	-moz-transform: rotate(-180deg);
+	-ms-transform: rotate(-180deg);
+	-o-transform: rotate(-180deg);
+	transform: rotate(-180deg);
 }
 
 .overlay {
-	display: -webkit-flex; 
-  display: -moz-flex; 
-  display: -o-flex; 
-  display: -ms-flex; 
-  display: flex;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -o-flex;
+	display: -ms-flex;
+	display: flex;
 
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -o-align-items: center;
-  -ms-align-items: center;
-  align-items: center;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-o-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
 
-  justify-content: center;
-  -ms-flex-pack: center;
+	justify-content: center;
+	-ms-flex-pack: center;
 
 	position: fixed;
 	top: 0;
@@ -517,6 +517,7 @@ html .ui-button.ui-state-disabled:active {
 	width: 100%;
 	height: 100%;
 	background: rgba(0,0,0,.8);
+	z-index: 100;
 }
 
 .overlay .box {
@@ -538,6 +539,10 @@ html .ui-button.ui-state-disabled:active {
 	text-align: center;
 }
 
+.test {
+	display: none;
+}
+
 .overlay .box button {
 	width: 45%;
 	padding: 12px 0;
@@ -549,9 +554,9 @@ html .ui-button.ui-state-disabled:active {
 	text-transform: uppercase;
 	font-size: 13px;
 	-webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  cursor: pointer;
+	-moz-appearance: none;
+	appearance: none;
+	cursor: pointer;
 }
 
 .overlay .box button:first-of-type {
@@ -590,20 +595,20 @@ html .ui-button.ui-state-disabled:active {
 		height: 85%;
 	}
 	.main .title .menu-btn {
-		display: -webkit-flex; 
-	  display: -moz-flex; 
-	  display: -o-flex; 
-	  display: -ms-flex; 
-	  display: flex;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -o-flex;
+		display: -ms-flex;
+		display: flex;
 
-	  -webkit-align-items: center;
-	  -moz-align-items: center;
-	  -o-align-items: center;
-	  -ms-align-items: center;
-	  align-items: center;
+		-webkit-align-items: center;
+		-moz-align-items: center;
+		-o-align-items: center;
+		-ms-align-items: center;
+		align-items: center;
 
-	  justify-content: center;
-	  -ms-flex-pack: center;
+		justify-content: center;
+		-ms-flex-pack: center;
 
 		position: absolute;
 		top: 0;
@@ -634,13 +639,13 @@ html .ui-button.ui-state-disabled:active {
 		top: 8px;
 	}
 	.main .title .menu-btn span {
-	  -webkit-transition: -webkit-transform 0.3s;
-	          transition: transform 0.3s;
+		-webkit-transition: -webkit-transform 0.3s;
+		transition: transform 0.3s;
 	}
 	.main .title .menu-btn.active span {
-	  -webkit-transform: rotate(90deg);
-	      -ms-transform: rotate(90deg);
-	          transform: rotate(90deg);
+		-webkit-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
+		transform: rotate(90deg);
 	}
 	.main .container ul.nav {
 		width: 0;

@@ -9,7 +9,8 @@
     var alertMessage = document.getElementById('alertMessage');
     var alertOK = document.getElementById('alertOK');
 
-    function Popup(){}
+    function Popup(){
+    }
 
     Popup.prototype.requestAlert = function(requestVO, message) {
         return new Promise(function(resolve, reject){
@@ -18,7 +19,7 @@
             alertOK.addEventListener('click', function handler(event){
                 alertOK.removeEventListener('click', handler);
                 alert.classList.add('hidden');
-                reject(requestVO);
+                resolve(requestVO);
             });
         });
     };
